@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+
+// import { Provider } from 'react-redux'
+import React, { Component, lazy, Suspense } from 'react'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './components/header';
+
+const ProductDetail = lazy(() => import('./pages/productDetail'))
+const ProductsList = lazy(() => import('./pages/productsList'))
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Suspense fallback={<h1>Loading.....</h1>}>
+
+      {/* <Provider store={store}> */}
+      <BrowserRouter>
+        <Header href='/' />
+        <Routes>
+          <Route path="/" element={<ProductsList />} />
+          <Route path="/detail/:id" element={<ProductDetail />} />
+
+        </Routes>
+      </BrowserRouter>
+      {/* </Provider> */}
+    </Suspense>
+  )
 }
 
 export default App;
