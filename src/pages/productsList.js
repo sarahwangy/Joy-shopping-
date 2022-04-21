@@ -2,7 +2,7 @@
 import axios from "axios"
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import ProductComponent from "../components/productComponent"
+import ProductComponent from "../components/productComponents"
 
 
 // 1. 先class 联系，  3. function 联系， -==》 redux 练习  4. use state， usereduce 联系 
@@ -31,7 +31,7 @@ export default class ProductsList extends Component {
 
         // axios.get('https://fakestoreapi.com/products')
         // api 呼叫比较慢，可以测试后端接口可以呼叫成功的情况下，自己写固定的JSON api, 这样方便节约时间写前端，等样式写好了，再把固定JSON 换成后端API 接口
-        axios.get('/api/producetList.json')
+        axios.get(`/api/producetList.json`)
             .then((res) => {
 
                 console.log(res.data)
@@ -72,7 +72,9 @@ export default class ProductsList extends Component {
         // console.log("state", JSON.stringify(this.state))
         return (
 
-            <ProductComponent products={this.state.products} />
+            <div style={{ margin: "0 auto", marginTop: "80px" }}>
+                <ProductComponent products={this.state.products} />
+            </div>
         )
     }
 }
