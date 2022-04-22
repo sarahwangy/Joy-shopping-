@@ -1,11 +1,10 @@
 
-import axios from "axios"
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import ProductComponent from "../../components/productComponents"
 import { GET_LIST_DATA } from '../../redux/constants/index'
-
+import { getListData } from '../../redux/action/proListAction'
 
 
 // 1. 先class 联系，  3. function 联系， -==》 redux 练习  4. use state， usereduce 联系 
@@ -36,7 +35,6 @@ class ProductsList extends Component {
 
     componentDidMount() {
         this.props.getListData()
-
         // axios.get('https://fakestoreapi.com/products')
         // api 呼叫比较慢，可以测试后端接口可以呼叫成功的情况下，自己写固定的JSON api, 这样方便节约时间写前端，等样式写好了，再把固定JSON 换成后端API 接口
         // axios.get(`/api/producetList.json`)
@@ -78,6 +76,11 @@ class ProductsList extends Component {
         console.log("state", this.props)
 
         // console.log("state", JSON.stringify(this.state))
+
+        if (this.props.products.length <= 0) {
+            return;
+        }
+
         return (
 
             <div style={{ margin: "0 auto", marginTop: "80px" }}>
@@ -89,26 +92,13 @@ class ProductsList extends Component {
 
 
 const mapStateToProps = (state) => ({
-    products: state.proList
-
+    // 取 state的时候要取彻底，取到最后一层 
+    products: state.proList.products
 })
 
 const mapDispitchToProps = (dispatch) => {
     return {
-        getListData: () => {
-            axios.get(`/api/producetList.json`)
-                .then((res) => {
-                    console.log(res.data)
-                    const result = res.data;
-                    const getListAction = (data) => ({ type: GET_LIST_DATA, data })
-
-                    dispatch(getListAction(result))
-
-
-                }).catch((error) => {
-                    console.log(error)
-                })
-        }
+        getListData: () => dispatch(getListData())
 
     }
 

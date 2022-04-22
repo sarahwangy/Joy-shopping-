@@ -11,7 +11,7 @@ export default (state = initState, action) => {
     switch (type) {
         case GET_LIST_DATA:
             console.log("GET_LIST_DATA", action)
-            return { products: action.data }
+            return { ...state, products: action.data }
 
         default:
             return state;

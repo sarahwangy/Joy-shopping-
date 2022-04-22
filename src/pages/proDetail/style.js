@@ -46,7 +46,7 @@ export const DetailPrice = styled.h2`
     background: #00B5AD;
     margin:30px 0 0 22px;
     padding:12px 33px;
-    width: 147px;
+    width: 167px;
     height: 52px;
 
     &:hover{
