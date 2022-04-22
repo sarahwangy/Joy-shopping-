@@ -8,6 +8,8 @@ import {
 } from './style'
 
 export default function ProductComponent(props) {
+    console.log(props, "props com")
+    console.log(JSON.stringify(props), "json string props")
     return (
 
 
