@@ -2,7 +2,7 @@
 import axios from "axios"
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import ProductComponent from "../components/productComponents"
+import ProductComponent from "../../components/productComponents"
 
 
 // 1. 先class 联系，  3. function 联系， -==》 redux 练习  4. use state， usereduce 联系 

@@ -5,8 +5,8 @@ import React, { Component, lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/header';
 
-const ProductDetail = lazy(() => import('./pages/productDetail'))
-const ProductsList = lazy(() => import('./pages/productsList'))
+const ProductDetail = lazy(() => import('./pages/detailList/index'))
+const ProductsList = lazy(() => import('./pages/homeList/index'))
 
 
 
