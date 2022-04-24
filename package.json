@@ -1,8 +1,8 @@
 {
   "name": "shopping-practice",
   "version": "0.1.0",
-  "private": true,https: //sarahwangy.github.io/JoyShop/
-  "homepage": "",
+  "private": true,
+  "homepage": "https: //sarahwangy.github.io/JoyShop/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
