@@ -7,6 +7,7 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import { DetailCart, DetailPrice, DetailCategory, DetailTitle, DetailDesc } from "./style";
 import { getDetail, removeDetail } from "../../redux/action/proDetailAction";
 
+import ProductList from '../../config/productList.json'
 
 
 export default function ProductDetail(p) {
@@ -40,30 +41,35 @@ export default function ProductDetail(p) {
         // 这种接收 ID 的呼叫API 方法  axios.get(`/api/producetList.json?id=${id}`)，
         // 要写 json?id=${id}， 而不是json/?id=${id}!!
 
-        axios.get(`/api/producetList.json?id=${id}`)
-            .then((res) => {
+        // axios.get(`/api/producetList.json?id=${id}`)
+        //     .then((res) => {
 
-                console.log("detail res", res.data)
+        // console.log("detail res", res.data)
 
-                const result = res.data;
-                const findContent = result.find((productObj) => {
-                    // console.log(typeof (productObj.id));
-                    // console.log(typeof (params.id));
+        // const result = {};
+        // const findContent = result.find((productObj) => {
+        //     // console.log(typeof (productObj.id));
+        //     // console.log(typeof (params.id));
 
-                    //  params.id 和 product ID type 类型不一样，JSON里面是 ”“ string， 自身的是 number
-                    // 所以对比的时候，要么 == 俩个等于号（不比较类型， 模糊）， 要么是 === 2个等于号，但是要转换下 string to number类型
-                    return productObj.id === parseInt(params.id);
-                });
+        //     //  params.id 和 product ID type 类型不一样，JSON里面是 ”“ string， 自身的是 number
+        //     // 所以对比的时候，要么 == 俩个等于号（不比较类型， 模糊）， 要么是 === 2个等于号，但是要转换下 string to number类型
+        //     return productObj.id === parseInt(params.id);
+        // });
 
-                dispatch(getDetail(findContent))
-                // console.log(findContent);
-                // if (findContent) {
-                //     setProduct(findContent)
-                // }
+        const findContent = ProductList[parseInt(params.id)]
 
-            }).catch((error) => {
-                console.log(error)
-            })
+        console.log("findContent", JSON
+            .stringify(findContent))
+
+        dispatch(getDetail(findContent))
+        // console.log(findContent);
+        // if (findContent) {
+        //     setProduct(findContent)
+        // }
+
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
     }
 
 
