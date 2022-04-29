@@ -1,8 +1,8 @@
 import { GET_DETAIL, REMOVE_DETAIL } from "../constants";
 import { useReducer, useContext, createContext } from "react";
-import ProductList from "../config/productList.json";
-
-// import ProductDetail from '../pages/proDetail'
+import { productList } from "../data";
+// 不用 json fake API，用 data js 代替，这样方便部署 deploy
+// import ProductsList from "../config/productList.json";
 
 //  actions
 
@@ -11,7 +11,7 @@ export const getDetail = (data) => ({ type: GET_DETAIL, data });
 
 export const getDetailDataAction = (dispatch) => {
   return (id) => {
-    const findContent = ProductList[id];
+    const findContent = productList[id];
     dispatch(getDetail(findContent));
   };
 };
@@ -44,6 +44,7 @@ export const useProductDetailState = () => {
 export const ProductDetailProvider = ({ children }) => {
   const [state, dispatch] = useReducer(proDetailReducer, initialState);
 
+  // productDetailActions是getDetailDataAction 返回的函数。。。
   const productDetailActions = getDetailDataAction(dispatch);
   return (
     <ProductDetailContext.Provider
