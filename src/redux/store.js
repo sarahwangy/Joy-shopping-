@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, compose } from "redux";
 import AllReducer from "./index";
 
 import thunk from "redux-thunk";
-import { configureStore } from '@reduxjs/toolkit'
 
 
 //  react Dev tools redux extension 的使用 结合compose，要不然不起作用。。。！

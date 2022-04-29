@@ -1,13 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { ProductProvider } from "./state-hooks/produtList";
+import { ProductDetailProvider } from "./state-hooks/productDetail";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ProductDetailProvider>
+      <ProductProvider>
+        <App />
+      </ProductProvider>
+    </ProductDetailProvider>
   </React.StrictMode>
 );
 
