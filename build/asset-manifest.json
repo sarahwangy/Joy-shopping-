@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Joy-shopping-/static/css/main.e6c13ad2.css",
+    "main.js": "/Joy-shopping-/static/js/main.8faa4655.js",
+    "static/js/740.1c233f26.chunk.js": "/Joy-shopping-/static/js/740.1c233f26.chunk.js",
+    "static/js/640.34c98583.chunk.js": "/Joy-shopping-/static/js/640.34c98583.chunk.js",
+    "static/js/787.65b6dfd3.chunk.js": "/Joy-shopping-/static/js/787.65b6dfd3.chunk.js",
+    "static/js/703.1276d817.chunk.js": "/Joy-shopping-/static/js/703.1276d817.chunk.js",
+    "static/js/588.cfd228f3.chunk.js": "/Joy-shopping-/static/js/588.cfd228f3.chunk.js",
+    "index.html": "/Joy-shopping-/index.html",
+    "main.e6c13ad2.css.map": "/Joy-shopping-/static/css/main.e6c13ad2.css.map",
+    "main.8faa4655.js.map": "/Joy-shopping-/static/js/main.8faa4655.js.map",
+    "740.1c233f26.chunk.js.map": "/Joy-shopping-/static/js/740.1c233f26.chunk.js.map",
+    "640.34c98583.chunk.js.map": "/Joy-shopping-/static/js/640.34c98583.chunk.js.map",
+    "787.65b6dfd3.chunk.js.map": "/Joy-shopping-/static/js/787.65b6dfd3.chunk.js.map",
+    "703.1276d817.chunk.js.map": "/Joy-shopping-/static/js/703.1276d817.chunk.js.map",
+    "588.cfd228f3.chunk.js.map": "/Joy-shopping-/static/js/588.cfd228f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.8faa4655.js"
+  ]
+}
